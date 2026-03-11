@@ -1,0 +1,15 @@
+{
+  "name": "tweet-sentiment-backend",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:vader": "node server_vader.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "sentiment": "^5.0.2",
+    "vader-sentiment": "^1.1.3"
+  }
+}
