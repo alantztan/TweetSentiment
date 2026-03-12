@@ -1,0 +1,29 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Runtime logs
+logs/
+*.log
+
+# Build/cache
+dist/
+build/
+coverage/
+.tmp/
+.cache/
+
+# Optional local-only folder
+skills/
