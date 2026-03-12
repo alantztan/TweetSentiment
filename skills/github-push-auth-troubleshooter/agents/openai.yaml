@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Push Auth Troubleshooter"
+  short_description: "Fix Git push authentication errors and set up PAT or SSH"
+  default_prompt: "Diagnose and fix GitHub push authentication problems for this repository."

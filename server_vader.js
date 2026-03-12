@@ -9,7 +9,7 @@ try {
   Sentiment = null;
 }
 
-const PORT = 3010;
+const PORT = Number(process.env.PORT || 3010);
 const DATA_DIR = path.join(__dirname, 'data');
 const TWEETS_PATH = path.join(DATA_DIR, 'Trump_Raw_Tweets.txt');
 const POS_PATH = path.join(DATA_DIR, 'positive.txt');
