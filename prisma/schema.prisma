@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model LexiconWord {
+  id        BigInt   @id @default(autoincrement()) @db.BigInt
+  source    String
+  word      String
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@unique([source, word], map: "lexicon_words_source_word_key")
+  @@map("lexicon_words")
+}
+
+model Tweet {
+  id         BigInt                      @id @default(autoincrement()) @db.BigInt
+  sourceFile String                      @default("Trump_Raw_Tweets.txt") @map("source_file")
+  lineNo     Int                         @map("line_no")
+  rawText    String                      @map("raw_text")
+  embedding  Unsupported("vector(1536)")?
+  createdAt  DateTime                    @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@unique([sourceFile, lineNo], map: "tweets_source_file_line_no_key")
+  @@map("tweets")
+}
